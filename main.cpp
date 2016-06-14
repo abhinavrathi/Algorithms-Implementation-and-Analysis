@@ -1,12 +1,15 @@
 #include <iostream>
 #include <vector>
 #include "Searching/LinearSearch.hpp"
+#include "Sorting/SelectionSort.hpp"
 using namespace std;
 int main(int argc, const char * argv[]){
 	int ch;
 	int N,el;
 	vector<int> arr;
-	LinearSearch Obj;
+	vector<int>::iterator it;
+	LinearSearch LS;
+	SelectionSort SS;
 	do{
 		cout<<"\n=========\n";
 		cout<<"MAIN MENU";
@@ -25,23 +28,40 @@ int main(int argc, const char * argv[]){
 			case 1: arr.clear();
 					cout<<"\nEnter No. of Elements : ";
 					cin>>N;
-					for(int i=0;i<N;++i){
-						cout<<"Enter Element "<<(i+1)<<" : ";
+					if(N>0){
+						for(int i=0;i<N;++i){
+							cout<<"Enter Element "<<(i+1)<<" : ";
+							cin>>el;
+							arr.push_back(el);
+						}
+						LS.initialize(arr);
+						cout<<"Enter Element to be searched : ";
 						cin>>el;
-						arr.push_back(el);
-					}
-					Obj.initialize(arr);
-					cout<<"Enter Element to be searched : ";
-					cin>>el;
-					cout<<"\nOUTPUT -> ";
-					if(Obj.search(el)){
-						cout<<"Element found!\n";
-					}
-					else{
-						cout<<"Element not found!\n";
+						cout<<"\nOUTPUT -> ";
+						if(LS.search(el)){
+							cout<<"Element found!\n";
+						}
+						else{
+							cout<<"Element not found!\n";
+						}
 					}
 					break;
-			case 2:
+			case 2: arr.clear();
+					cout<<"\nEnter No. of Elements : ";
+					cin>>N;
+					if(N>0){
+						for(int i=0;i<N;++i){
+							cout<<"Enter Element "<<(i+1)<<" : ";
+							cin>>el;
+							arr.push_back(el);
+						}
+						SS.sort(arr);
+						cout<<"\nOUTPUT -> ";
+						for(it=arr.begin();it!=arr.end();++it){
+							cout<<*it<<" ";
+						}
+						cout<<"\n";
+					}
 					break;
 			case 3:
 					break;
