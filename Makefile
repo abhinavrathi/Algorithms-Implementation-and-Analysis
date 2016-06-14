@@ -5,10 +5,7 @@ SOURCES=main.cpp $(wildcard $(DIRS)/*.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=run
 
-all:checkdir $(SOURCES) $(EXECUTABLE)
-
-checkdir:
-	@mkdir -p build
+all:$(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(OBJECTS) -o $@
