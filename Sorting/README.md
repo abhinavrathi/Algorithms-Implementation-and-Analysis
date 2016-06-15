@@ -4,23 +4,22 @@ There is a short descrption of various sorting algorithms listed below. As a gen
 ##Selection Sort
 This Algorithm sequentially checks the complete list for the smallest element by iterator i, with iterator j running from i+1 to end of list. If the ith element wasn't the smallest, elements at i & smallest j are swapped.We then continue with next iteration of i uptill all but one element in the list.<br>
 Thus after each iteration the smallest elements are pushed towards the start of the list in the sorted order.<br>
-Time Complexity is O(n<sup>2</sup>).<br>
-Space Complexity is O(1).
+Time Complexity is &theta;(n<sup>2</sup>).<br>
+Space Complexity is &theta;(1).
 
 ##Insertion Sort
 This Algorithm starts from the 2nd element in the list going to the end using iterator i. At each element, we compare it going back to the first element, swapping with all those encountered elements which are bigger than it.<br>
 Thus after each iteration of i, we have a sorted list from index 0 to (i-1), i.e. of the elements visited till now.<br>
-Time Complexity if O(n<sup>2</sup>). (Note: For almost sorted array Insertion Sort runs almost in O(n))<br>
-Space Complexity is O(1).
+Time Complexity if &theta;(n<sup>2</sup>). (Note: For almost sorted array Insertion Sort runs almost in &theta;(n))<br>
+Space Complexity is &theta;(1).
 
 ##Merge Sort
 This Algorithm recursively divides the array in smaller arrays until they are of size 1. Arrays of size 1 are natively sorted. It then combines these adjacent sorted arrays recursively to form bigger sorted arrays until the whole array is sorted. The combine step is achieved in linear time since we just compare the top of the two lists, choose the smaller and continue the same.<br>
-This is a basic divide and conquer algorithms.<br>
-Here the divide step is trivial and takes O(1) time.<br>
-The combine steps takes O(n) time.<br>
-Using the Master Theorem: T(n) = a*T(n/b) + D(n) + C(n)<br>
+This is a basic divide and conquer algorithm.<br>
+Here the divide step is trivial and takes &theta;(1) time.<br>
+The combine steps takes &theta;(n) time.<br>
+Using the Master Theorem: T(n) = aT(n/b) + D(n) + C(n)<br>
 Here a = 2, since each problem is divided in two; and b = 2, the sub problems are of roughly half the size each.<br>
-So, T(n) = 2*T(n/2) + O(1) + O(n) = O(n*log n)<br>
-(Note: It's more accurately big-theta)<br>
-Time Complexity if O(n*log n).<br>
-Space Complexity is O(n).
+So, T(n) = 2T(n/2) + &theta;(1) + &theta;(n) = &theta;(nlog n)<br>
+Thus, Time Complexity if &theta;(nlog n).<br>
+Space Complexity is &theta;(n).
