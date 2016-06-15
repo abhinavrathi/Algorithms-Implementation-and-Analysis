@@ -3,6 +3,7 @@
 #include "Searching/LinearSearch.hpp"
 #include "Sorting/SelectionSort.hpp"
 #include "Sorting/InsertionSort.hpp"
+#include "Sorting/MergeSort.hpp"
 using namespace std;
 int main(int argc, const char * argv[]){
 	int ch,subch;
@@ -12,6 +13,7 @@ int main(int argc, const char * argv[]){
 	LinearSearch LS;
 	SelectionSort SS;
 	InsertionSort IS;
+	MergeSort MS;
 	do{
 		cout<<"\n=========\n";
 		cout<<"MAIN MENU";
@@ -76,7 +78,7 @@ int main(int argc, const char * argv[]){
 									break;
 							case 2: IS.sort(arr);
 									break;
-							case 3: 
+							case 3: MS.sort(arr);
 									break;
 							case 4: 
 									break;
