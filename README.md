@@ -8,10 +8,12 @@ Our executable is "run".
 
 ## Credits
 
-<ul>Introduction to Algorithms, 3rd Edition, Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein</ul><br>
-<ul>wikipedia.org</ul>
+<ul>
+	<li>Introduction to Algorithms, 3rd Edition, Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein</li>
+	<li>wikipedia.org</li>
+</ul>
 
 ## Contributors
 
-Univeristy: University of Florida<bt>
+Univeristy: University of Florida<br>
 Members: Abhinav Rathi
