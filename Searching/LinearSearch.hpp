@@ -3,8 +3,5 @@
 #include <vector>
 using namespace std;
 class LinearSearch{
-private:vector <int> list;
-public:	LinearSearch();
-	void initialize(vector<int> arr);
-	bool search(int num);
+public:	bool search(vector<int> arr,int num);
 };

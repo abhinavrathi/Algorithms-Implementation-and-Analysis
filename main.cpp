@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "Searching/LinearSearch.hpp"
+#include "Searching/BinarySearch.hpp"
 #include "Sorting/SelectionSort.hpp"
 #include "Sorting/InsertionSort.hpp"
 #include "Sorting/MergeSort.hpp"
@@ -10,9 +11,11 @@ using namespace std;
 int main(int argc, const char * argv[]){
 	int ch,subch;
 	int N,el;
+	bool found;
 	vector<int> arr;
 	vector<int>::iterator it;
 	LinearSearch LS;
+	BinarySearch BS;
 	SelectionSort SS;
 	InsertionSort IS;
 	MergeSort MS;
@@ -42,11 +45,28 @@ int main(int argc, const char * argv[]){
 							cin>>el;
 							arr.push_back(el);
 						}
-						LS.initialize(arr);
 						cout<<"Enter Element to be searched : ";
 						cin>>el;
+						do{
+							cout<<"\n=========\n";
+							cout<<"SUB MENU";
+							cout<<"\n=========\n";
+							cout<<"Press 1 for Linear Search.\n";
+							cout<<"Press 2 for Binary Search.\n";
+							cout<<"Enter your choice : ";
+							cin>>subch;
+							if(subch>2||subch<0)
+								cout<<"\nIllegal Choice!\n";
+						}while(subch>2||subch<0);
+						switch(subch){
+							case 1: found=LS.search(arr,el);
+									break;
+							case 2: QS.sort(arr);
+									found=BS.search(arr,el);
+									break;
+						}
 						cout<<"\nOUTPUT -> ";
-						if(LS.search(el)){
+						if(found){
 							cout<<"Element found!\n";
 						}
 						else{
