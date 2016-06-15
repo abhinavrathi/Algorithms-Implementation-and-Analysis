@@ -33,7 +33,7 @@ Using the Master Theorem: T(n) = aT(n/b) + D(n) + C(n)<br>
 Here a = 2, since each problem is divided in two; and b = 2, the sub problems are of roughly half the size each (hope so!).<br>
 So, T(n) = 2T(n/2) + &theta;(n) + &theta;(1) = &theta;(nlog n)<br>
 Thus, Time Complexity if &theta;(nlog n). (Note: Worst Case Complexity is &theta;(n<sup>2</sup>))<br>
-Space Complexity is &theta;(1).
+Space Complexity is &theta;(n).
 
 ##Heap Sort
 This Algorithm first builds a max-heap out of the list. This is achieved by using a function max_heapify which recursively swaps parent's value with the value of the larger child, provided child's value is bigger than parent's.<br>
