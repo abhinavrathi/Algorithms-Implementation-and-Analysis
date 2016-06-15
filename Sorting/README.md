@@ -34,3 +34,11 @@ Here a = 2, since each problem is divided in two; and b = 2, the sub problems ar
 So, T(n) = 2T(n/2) + &theta;(n) + &theta;(1) = &theta;(nlog n)<br>
 Thus, Time Complexity if &theta;(nlog n). (Note: Worst Case Complexity is &theta;(n<sup>2</sup>))<br>
 Space Complexity is &theta;(1).
+
+##Heap Sort
+This Algorithm first builds a max-heap out of the list. This is achieved by using a function max_heapify which recursively swaps parent's value with the value of the larger child, provided child's value is bigger than parent's.<br>
+Once we have a max heap, our next step is to exchange first element(largest) with the last element of current heap. After this we reduce the heap size by 1 and call max_heapify on first element to come back to a state of max heap. Iteratively doing this uptill we have a heap of size 1 ensures that the list becomes sorted with the largest element at the right end and values descending towards left, giving us an ascending sort.<br>
+max_heapify takes &theta;(log n) time.<br>
+build_max_heap takes &theta;(n) time.<br>
+Thus, Time Complexity if &theta;(nlog n).
+Space Complexity is &theta;(1).
