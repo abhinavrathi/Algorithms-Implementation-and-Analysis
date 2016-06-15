@@ -4,6 +4,7 @@
 #include "Sorting/SelectionSort.hpp"
 #include "Sorting/InsertionSort.hpp"
 #include "Sorting/MergeSort.hpp"
+#include "Sorting/QuickSort.hpp"
 using namespace std;
 int main(int argc, const char * argv[]){
 	int ch,subch;
@@ -14,6 +15,7 @@ int main(int argc, const char * argv[]){
 	SelectionSort SS;
 	InsertionSort IS;
 	MergeSort MS;
+	QuickSort QS;
 	do{
 		cout<<"\n=========\n";
 		cout<<"MAIN MENU";
@@ -80,7 +82,7 @@ int main(int argc, const char * argv[]){
 									break;
 							case 3: MS.sort(arr);
 									break;
-							case 4: 
+							case 4: QS.sort(arr);
 									break;
 							case 5: 
 									break;
