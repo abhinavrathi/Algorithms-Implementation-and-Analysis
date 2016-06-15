@@ -2,14 +2,16 @@
 #include <vector>
 #include "Searching/LinearSearch.hpp"
 #include "Sorting/SelectionSort.hpp"
+#include "Sorting/InsertionSort.hpp"
 using namespace std;
 int main(int argc, const char * argv[]){
-	int ch;
+	int ch,subch;
 	int N,el;
 	vector<int> arr;
 	vector<int>::iterator it;
 	LinearSearch LS;
 	SelectionSort SS;
+	InsertionSort IS;
 	do{
 		cout<<"\n=========\n";
 		cout<<"MAIN MENU";
@@ -55,7 +57,32 @@ int main(int argc, const char * argv[]){
 							cin>>el;
 							arr.push_back(el);
 						}
-						SS.sort(arr);
+						do{
+							cout<<"\n=========\n";
+							cout<<"SUB MENU";
+							cout<<"\n=========\n";
+							cout<<"Press 1 for Selection Sort.\n";
+							cout<<"Press 2 for Insertion Sort.\n";
+							cout<<"Press 3 for Merge Sort.\n";
+							cout<<"Press 4 for Quick Sort.\n";
+							cout<<"Press 5 for Heap Sort.\n";
+							cout<<"Enter your choice : ";
+							cin>>subch;
+							if(subch>5||subch<0)
+								cout<<"\nIllegal Choice!\n";
+						}while(subch>5||subch<0);
+						switch(subch){
+							case 1: SS.sort(arr);
+									break;
+							case 2: IS.sort(arr);
+									break;
+							case 3: 
+									break;
+							case 4: 
+									break;
+							case 5: 
+									break;
+						}
 						cout<<"\nOUTPUT -> ";
 						for(it=arr.begin();it!=arr.end();++it){
 							cout<<*it<<" ";
@@ -69,6 +96,7 @@ int main(int argc, const char * argv[]){
 					break;
 			case 5:
 					break;
+			default: cout<<"\nIllegal Choice!\n";
 		}
 	}while(ch!=0);
 	return 0;
