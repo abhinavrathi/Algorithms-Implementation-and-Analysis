@@ -40,5 +40,5 @@ This Algorithm first builds a max-heap out of the list. This is achieved by usin
 Once we have a max heap, our next step is to exchange first element(largest) with the last element of current heap. After this we reduce the heap size by 1 and call max_heapify on first element to come back to a state of max heap. Iteratively doing this uptill we have a heap of size 1 ensures that the list becomes sorted with the largest element at the right end and values descending towards left, giving us an ascending sort.<br>
 max_heapify takes &theta;(log n) time.<br>
 build_max_heap takes &theta;(n) time.<br>
-Thus, Time Complexity if &theta;(nlog n).
+Thus, Time Complexity if &theta;(nlog n).<br>
 Space Complexity is &theta;(1).
