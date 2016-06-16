@@ -8,6 +8,7 @@
 #include "Sorting/QuickSort.hpp"
 #include "Sorting/HeapSort.hpp"
 #include "Sorting/CountingSort.hpp"
+#include "OrderStatistics/SelectRank.hpp"
 using namespace std;
 int main(int argc, const char * argv[]){
 	int ch,subch;
@@ -23,6 +24,7 @@ int main(int argc, const char * argv[]){
 	QuickSort QS;
 	HeapSort HS;
 	CountingSort CS;
+	SelectRank SR;
 	do{
 		cout<<"\n=========\n";
 		cout<<"MAIN MENU";
@@ -47,7 +49,7 @@ int main(int argc, const char * argv[]){
 							cin>>el;
 							arr.push_back(el);
 						}
-						cout<<"Enter Element to be searched : ";
+						cout<<"\nEnter Element to be searched : ";
 						cin>>el;
 						do{
 							cout<<"\n=========\n";
@@ -121,7 +123,24 @@ int main(int argc, const char * argv[]){
 						cout<<"\n";
 					}
 					break;
-			case 3:
+			case 3: arr.clear();
+					cout<<"\nEnter No. of Elements : ";
+					cin>>N;
+					if(N>0){
+						for(int i=0;i<N;++i){
+							cout<<"Enter Element "<<(i+1)<<" : ";
+							cin>>el;
+							arr.push_back(el);
+						}
+						do{
+						cout<<"\nEnter Rank to be searched : ";
+						cin>>el;
+						if(el>N||el<1)
+								cout<<"\nIllegal Choice!\n";
+						}while(el>N||el<1);
+						cout<<"\nOUTPUT -> ";
+						cout<<"Item at Rank "<<el<<" is "<<SR.rankeditem(arr,el)<<"\n";
+					}
 					break;
 			case 4:
 					break;

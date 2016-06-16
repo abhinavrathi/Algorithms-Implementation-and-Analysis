@@ -1,6 +1,6 @@
 CC=g++
 CFLAGS=-c
-SOURCES=main.cpp $(wildcard Searching/*.cpp) $(wildcard Sorting/*.cpp)
+SOURCES=main.cpp $(wildcard OrderStatistics/*.cpp) $(wildcard Searching/*.cpp) $(wildcard Sorting/*.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=run
 
