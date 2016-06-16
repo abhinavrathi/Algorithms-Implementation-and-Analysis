@@ -7,10 +7,13 @@ EXECUTABLE=run
 all:$(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(OBJECTS) -o $@
+	@echo "Generating Executable: "$(EXECUTABLE)
+	@$(CC) $(OBJECTS) -o $@
 
 .cpp.o:
-	$(CC) $(CFLAGS) $< -o $@
+	@echo "Compiling Source Code File: "$<
+	@$(CC) $(CFLAGS) $< -o $@
 
 cl:
-	rm -f $(OBJECTS) $(EXECUTABLE)
+	@echo "Removed All Object Files & Executables!"
+	@rm -f $(OBJECTS) $(EXECUTABLE)
