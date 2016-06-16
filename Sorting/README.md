@@ -42,3 +42,10 @@ max_heapify takes &theta;(log n) time.<br>
 build_max_heap takes &theta;(n) time.<br>
 Thus, Time Complexity if &theta;(nlog n).<br>
 Space Complexity is &theta;(1).
+
+##Counting Sort
+This Algorithm works on the assumption that values in the array are limited to a fixed range say 0 to k with k being (hope so!) relatively << n.<br>
+We declare a new array of size k+1, and initialize it with 0's. We now traverse our original array and increment the counter of each values indexed by the new array. We then cumulate the values of the new array. Thus at the end we just traverse our original array backwards, referencing the new array, to give relative positions of elements for a sorted list. (This is a stable sort)<br>
+(Note: Radix Sort is just a variation of Counting Sort. It is applied to various digits of a number at a time, from unit digits going towards left)<br>
+Time Complexity if &theta;(n + k).<br>
+Space Complexity is &theta;(n + k).

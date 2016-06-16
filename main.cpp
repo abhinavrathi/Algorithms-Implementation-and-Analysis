@@ -7,6 +7,7 @@
 #include "Sorting/MergeSort.hpp"
 #include "Sorting/QuickSort.hpp"
 #include "Sorting/HeapSort.hpp"
+#include "Sorting/CountingSort.hpp"
 using namespace std;
 int main(int argc, const char * argv[]){
 	int ch,subch;
@@ -21,6 +22,7 @@ int main(int argc, const char * argv[]){
 	MergeSort MS;
 	QuickSort QS;
 	HeapSort HS;
+	CountingSort CS;
 	do{
 		cout<<"\n=========\n";
 		cout<<"MAIN MENU";
@@ -92,11 +94,12 @@ int main(int argc, const char * argv[]){
 							cout<<"Press 3 for Merge Sort.\n";
 							cout<<"Press 4 for Quick Sort.\n";
 							cout<<"Press 5 for Heap Sort.\n";
+							cout<<"Press 6 for Counting Sort.\n";
 							cout<<"Enter your choice : ";
 							cin>>subch;
-							if(subch>5||subch<0)
+							if(subch>6||subch<0)
 								cout<<"\nIllegal Choice!\n";
-						}while(subch>5||subch<0);
+						}while(subch>6||subch<0);
 						switch(subch){
 							case 1: SS.sort(arr);
 									break;
@@ -107,6 +110,8 @@ int main(int argc, const char * argv[]){
 							case 4: QS.sort(arr);
 									break;
 							case 5: HS.sort(arr);
+									break;
+							case 6: arr=CS.sort(arr);
 									break;
 						}
 						cout<<"\nOUTPUT -> ";
