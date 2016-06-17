@@ -12,6 +12,10 @@ struct node{
 class BinarySearchTree{
 private:node *head;
 	void preorder_traversal(node *head);
+	void inorder_traversal(node *head);
+	void postorder_traversal(node *head);
+	int maximum_at_node(node *head);
+	int minimum_at_node(node *head); 
 public:	BinarySearchTree();
 	void reset();
 	void insert(int n);
@@ -22,6 +26,6 @@ public:	BinarySearchTree();
 	void postorder();
 	int maximum();
 	int minimum();
-	int predecessor();
-	int successor();
+	int predecessor(int n);
+	int successor(int n);
 };

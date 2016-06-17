@@ -13,7 +13,7 @@
 using namespace std;
 int main(int argc, const char * argv[]){
 	int ch,subch;
-	int N,el;
+	int N,el,var;
 	bool found;
 	vector<int> arr;
 	vector<int>::iterator it;
@@ -155,8 +155,8 @@ int main(int argc, const char * argv[]){
 					cout<<"Press 4 to Display Tree (Inorder Traversal).\n";
 					cout<<"Press 5 to Display Tree (Postorder Traversal).\n";
 					cout<<"Press 6 to Search an Element.\n";
-					cout<<"Press 7 to Display Maximum Element.\n";
-					cout<<"Press 8 to Display Minimum Element.\n";
+					cout<<"Press 7 to Display Minimum Element.\n";
+					cout<<"Press 8 to Display Maximum Element.\n";
 					cout<<"Press 9 to Display Predecessor.\n";
 					cout<<"Press 10 to Display Successor.\n";
 					cout<<"Press 0 to Exit.\n";
@@ -176,21 +176,56 @@ int main(int argc, const char * argv[]){
 							BST.preorder();
 							cout<<"\n";
 							break;
-						case 4:	BST.inorder();
+						case 4:	cout<<"\nOUTPUT -> ";
+							BST.inorder();
+							cout<<"\n";
 							break;
-						case 5:	BST.postorder();
+						case 5:	cout<<"\nOUTPUT -> ";
+							BST.postorder();
+							cout<<"\n";
 							break;
 						case 6:	cout<<"\nEnter Element to Search : ";
 							cin>>el;
-							BST.search(el);
+							if(BST.search(el))
+								cout<<"\nOUTPUT -> Element Found!\n";
+							else
+								cout<<"\nOUTPUT -> Element Not Found!\n";
 							break;
-						case 7:	
+						case 7:	var=BST.minimum();
+							if(var!=-1)
+								cout<<"\nOUTPUT -> "<<var<<"\n";
+							else
+								cout<<"\nOUTPUT -> Tree is Empty!\n";
 							break;
-						case 8:	
+						case 8:	var=BST.maximum();
+							if(var!=-1)
+								cout<<"\nOUTPUT -> "<<var<<"\n";
+							else
+								cout<<"\nOUTPUT -> Tree is Empty!\n";
 							break;
-						case 9:	
+						case 9:	cout<<"\nEnter Element to find Predecessor of : ";
+							cin>>el;
+							var=BST.predecessor(el);
+							if(var==-1)
+								cout<<"\nOUTPUT -> No Predecessor Exists!\n";
+							else if(var==-2)
+								cout<<"\nOUTPUT -> Element Not found in the Tree!\n";
+							else if(var==-3)
+								cout<<"\nOUTPUT -> Tree is Empty!\n";
+							else
+								cout<<"\nOUTPUT -> Predecessor of "<<el<<" is "<<var<<"\n";
 							break;
-						case 10:	
+						case 10: cout<<"\nEnter Element to find Successor of : ";
+							cin>>el;
+							var=BST.successor(el);
+							if(var==-1)
+								cout<<"\nOUTPUT -> No Successor Exists!\n";
+							else if(var==-2)
+								cout<<"\nOUTPUT -> Element Not found in the Tree!\n";
+							else if(var==-3)
+								cout<<"\nOUTPUT -> Tree is Empty!\n";
+							else
+								cout<<"\nOUTPUT -> Successor of "<<el<<" is "<<var<<"\n";
 							break;
 						default:cout<<"\nIllegal Choice!\n";
 					}
