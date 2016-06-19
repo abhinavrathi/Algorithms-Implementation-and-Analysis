@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "Problems/MaximumSubarray.hpp"
 #include "Searching/LinearSearch.hpp"
 #include "Searching/BinarySearch.hpp"
 #include "Sorting/SelectionSort.hpp"
@@ -27,6 +28,7 @@ int main(int argc, const char * argv[]){
 	CountingSort CS;
 	SelectRank SR;
 	BinarySearchTree BST;
+	MaximumSubarray MSA;
 	do{
 		cout<<"\n=========\n";
 		cout<<"MAIN MENU";
@@ -36,6 +38,7 @@ int main(int argc, const char * argv[]){
 		cout<<"Press 3 for Order Statistic Tools.\n";
 		cout<<"Press 4 for Tree Tools.\n";
 		cout<<"Press 5 for Graph Tools.\n";
+		cout<<"Press 6 for Problems.\n";
 		cout<<"Press 0 to Exit.\n";
 		cout<<"Enter your choice : ";
 		cin>>ch;
@@ -232,6 +235,60 @@ int main(int argc, const char * argv[]){
 				}while(subch!=0);
 				break;
 			case 5:	
+				break;
+			case 6: do{
+					cout<<"\n=========\n";
+					cout<<"SUB MENU";
+					cout<<"\n=========\n";
+					cout<<"Press 1 for Maximum Subarray Problem.\n";
+					cout<<"Press 2 for .\n";
+					cout<<"Press 3 for .\n";
+					cout<<"Press 4 for .\n";
+					cout<<"Press 5 for .\n";
+					cout<<"Press 6 for .\n";
+					cout<<"Press 7 for .\n";
+					cout<<"Press 8 for .\n";
+					cout<<"Press 9 for .\n";
+					cout<<"Press 10 for .\n";
+					cout<<"Press 0 to Exit.\n";
+					cout<<"Enter your choice : ";
+					cin>>subch;
+					switch(subch){
+						case 0:	break;
+						case 1:	arr.clear();
+							cout<<"\nEnter No. of Elements : ";
+							cin>>N;
+							if(N>0){
+								for(int i=0;i<N;++i){
+									cout<<"Enter Element "<<(i+1)<<" : ";
+									cin>>el;
+									arr.push_back(el);
+								}
+								cout<<"\nOUTPUT -> ";
+								MSA.sum(arr);
+							}
+							break;
+						case 2:	
+							break;
+						case 3:	
+							break;
+						case 4:	
+							break;
+						case 5:	
+							break;
+						case 6:	
+							break;
+						case 7:	
+							break;
+						case 8:	
+							break;
+						case 9:	
+							break;
+						case 10: 
+							break;
+						default:cout<<"\nIllegal Choice!\n";
+					}
+				}while(subch!=0);
 				break;
 			default:cout<<"\nIllegal Choice!\n";
 		}
