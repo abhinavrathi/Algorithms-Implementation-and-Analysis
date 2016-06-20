@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include "Problems/MaximumSubarray.hpp"
 #include "Searching/LinearSearch.hpp"
 #include "Searching/BinarySearch.hpp"
 #include "Sorting/SelectionSort.hpp"
@@ -11,10 +10,12 @@
 #include "Sorting/CountingSort.hpp"
 #include "OrderStatistics/SelectRank.hpp"
 #include "Tree/BinarySearchTree.hpp"
+#include "Problems/MaximumSubarray.hpp"
+#include "Problems/PriorityQueue.hpp"
 using namespace std;
 int main(int argc, const char * argv[]){
-	int ch,subch;
-	int N,el,var;
+	int ch,subch,subch1;
+	int N,el,var,var1;
 	bool found;
 	vector<int> arr;
 	vector<int>::iterator it;
@@ -29,6 +30,7 @@ int main(int argc, const char * argv[]){
 	SelectRank SR;
 	BinarySearchTree BST;
 	MaximumSubarray MSA;
+	PriorityQueue PQ;
 	do{
 		cout<<"\n=========\n";
 		cout<<"MAIN MENU";
@@ -57,9 +59,9 @@ int main(int argc, const char * argv[]){
 					cout<<"\nEnter Element to be searched : ";
 					cin>>el;
 					do{
-						cout<<"\n=========\n";
-						cout<<"SUB MENU";
-						cout<<"\n=========\n";
+						cout<<"\n==============\n";
+						cout<<"SEARCHING MENU";
+						cout<<"\n==============\n";
 						cout<<"Press 1 for Linear Search.\n";
 						cout<<"Press 2 for Binary Search.\n";
 						cout<<"Enter your choice : ";
@@ -93,9 +95,9 @@ int main(int argc, const char * argv[]){
 						arr.push_back(el);
 					}
 					do{
-						cout<<"\n=========\n";
-						cout<<"SUB MENU";
-						cout<<"\n=========\n";
+						cout<<"\n=============\n";
+						cout<<"SORTING MENU";
+						cout<<"\n=============\n";
 						cout<<"Press 1 for Selection Sort.\n";
 						cout<<"Press 2 for Insertion Sort.\n";
 						cout<<"Press 3 for Merge Sort.\n";
@@ -150,7 +152,7 @@ int main(int argc, const char * argv[]){
 			case 4:	BST.reset();
 				do{
 					cout<<"\n=========\n";
-					cout<<"SUB MENU";
+					cout<<"TREE MENU";
 					cout<<"\n=========\n";
 					cout<<"Press 1 to Insert an Element.\n";
 					cout<<"Press 2 to Delete an Element.\n";
@@ -237,11 +239,11 @@ int main(int argc, const char * argv[]){
 			case 5:	
 				break;
 			case 6: do{
-					cout<<"\n=========\n";
-					cout<<"SUB MENU";
-					cout<<"\n=========\n";
+					cout<<"\n=============\n";
+					cout<<"PROBLEMS MENU";
+					cout<<"\n=============\n";
 					cout<<"Press 1 for Maximum Subarray Problem.\n";
-					cout<<"Press 2 for .\n";
+					cout<<"Press 2 for Priority Queue Implimentation.\n";
 					cout<<"Press 3 for .\n";
 					cout<<"Press 4 for .\n";
 					cout<<"Press 5 for .\n";
@@ -268,7 +270,59 @@ int main(int argc, const char * argv[]){
 								MSA.sum(arr);
 							}
 							break;
-						case 2:	
+						case 2:	arr.clear();
+							cout<<"\nEnter No. of Elements : ";
+							cin>>N;
+							if(N>0){
+								for(int i=0;i<N;++i){
+									cout<<"Enter Element "<<(i+1)<<" : ";
+									cin>>el;
+									arr.push_back(el);
+								}
+								PQ.initialize(arr);
+							}
+							do{
+								cout<<"\n===================\n";
+								cout<<"PRIORITY QUEUE MENU";
+								cout<<"\n===================\n";
+								cout<<"Press 1 to Show Maximum.\n";
+								cout<<"Press 2 to Remove Maximum.\n";
+								cout<<"Press 3 to Insert in Priority Queue.\n";
+								cout<<"Press 4 to Modify Element(s).\n";
+								cout<<"Press 0 to Exit.\n";
+								cout<<"Enter your choice : ";
+								cin>>subch1;
+								switch(subch1){
+									case 0:	break;
+									case 1:	cout<<"\nOUTPUT -> ";
+										var=PQ.show_max();
+										if(var!=-1)
+											cout<<var<<"\n";
+										else
+											cout<<"Priority Queue is Empty!\n";
+										break;
+									case 2:	cout<<"\nOUTPUT -> ";
+										var=PQ.remove_max();
+										if(var!=-1)
+											cout<<var<<" removed from Priority Queue\n";
+										else
+											cout<<"Priority Queue is Empty!\n";
+										break;
+									case 3:	cout<<"\nEnter Element to Insert : ";
+										cin>>var;
+										PQ.insert(var);
+										cout<<"\nOUTPUT -> "<<var<<" inserted in Priority Queue\n";
+										break;
+									case 4:	cout<<"\nEnter Element to Modify : ";
+										cin>>var;
+										cout<<"Enter New Element Value : ";
+										cin>>var1;
+										PQ.modify(var,var1);
+										cout<<"\nOUTPUT -> All occurences, if any, of "<<var<<" modified to "<<var1<<" in Priority Queue\n";
+										break;
+									default:cout<<"\nIllegal Choice!\n";
+								}
+							}while(subch1!=0);
 							break;
 						case 3:	
 							break;
