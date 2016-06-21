@@ -14,6 +14,8 @@
 #include "Problems/PriorityQueue.hpp"
 #include "Graphs/BFS.hpp"
 #include "Graphs/DFS.hpp"
+#include "Graphs/Prim.hpp"
+#include "Graphs/Dijkstra.hpp"
 using namespace std;
 int main(int argc, const char * argv[]){
 	int ch,subch,subch1;
@@ -35,6 +37,8 @@ int main(int argc, const char * argv[]){
 	PriorityQueue PQ;
 	BFS BF;
 	DFS DF;
+	Prim PR;
+	Dijkstra DJ;
 	do{
 		cout<<"\n=========\n";
 		cout<<"MAIN MENU";
@@ -247,8 +251,7 @@ int main(int argc, const char * argv[]){
 					cout<<"Press 1 for Breadth First Search.\n";
 					cout<<"Press 2 for Depth First Search.\n";
 					cout<<"Press 3 to find Minimum Spanning Tree (Prim).\n";
-					cout<<"Press 4 to find Minimum Spanning Tree (Kruskal).\n";
-					cout<<"Press 5 to find Shortest Distance (Dijkstra).\n";
+					cout<<"Press 4 to find Shortest Distance (Dijkstra).\n";
 					cout<<"Press 0 to Exit.\n";
 					cout<<"Enter your choice : ";
 					cin>>subch;
@@ -262,9 +265,8 @@ int main(int argc, const char * argv[]){
 							break;
 						case 3:	
 							break;
-						case 4:	
-							break;
-						case 5:	
+						case 4:	DJ.input();
+							DJ.display();
 							break;
 						default:cout<<"\nIllegal Choice!\n";
 					}
