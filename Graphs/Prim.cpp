@@ -2,9 +2,9 @@
 
 #include <vector>
 #include <iostream>
-#include "Dijkstra.hpp"
+#include "Prim.hpp"
 using namespace std;
-void Dijkstra::input(){
+void Prim::input(){
 	int i,j,N,E,u,v,w;
 	list.clear();
 	cout<<"\nEnter number of vertices in the Graph : ";
@@ -18,14 +18,15 @@ void Dijkstra::input(){
 		}
 		list.push_back(temp);
 	}
-	cout<<"\nInstruction : Enter edge information. (Directed)\nInput space separated source destination edge_weight.\n";
+	cout<<"\nInstruction : Enter edge information. (Undirected)\nInput space separated source destination edge_weight.\n";
 	for(i=0;i<E;++i){
 		cout<<"Enter Edge "<<i+1<<" : ";
 		cin>>u>>v>>w;
 		list[u-1][v-1]=w;
+		list[v-1][u-1]=w;
 	}
 };
-void Dijkstra::display(){
+void Prim::display(){
 	int u,v,t,N;
 	vector<int> priority_queue;
 	N=list.size();
@@ -40,52 +41,47 @@ void Dijkstra::display(){
 		distance.push_back(temp);
 		dist[u]=100;
 	}
-	cout<<"Enter source node : ";
-	cin>>u;
-	distance[u-1][1]=0;
-	dist[u-1]=0;
-	build_min_heap();
-	parent[u-1]=0;
-	cout<<"\nDijkstra Shortest Paths from Node "<<u<<" ->";
+	u=rand()%N;
+	cout<<"\nStarting Edge:"<<u+1;
+	distance[u][1]=0;
+	dist[u]=0;
+	parent[u]=-1;
+	cout<<"\nPrim's Minimum Spanning Tree Contains following Edges : \n";
 	while(distance.size()!=0){
+		build_min_heap();
 		t=remove_min();
+		if(parent[t]!=-1)
+			cout<<"("<<t+1<<","<<parent[t]+1<<")\n";
 		for(v=0;v<list[t].size();++v){
-			if(dist[v]>dist[t]+list[t][v]){
+			if(exists(v)&&dist[v]>list[t][v]){
 				parent[v]=t;
-				dist[v]=dist[t]+list[t][v];
+				dist[v]=list[t][v];
 				set(v,dist[v]);
 			}
 		}
 	}
-	cout<<"\nNode\tParent\t\tDistance";
-	for(t=0;t<N;++t){
-		cout<<"\n"<<t+1<<"\t";
-		if(t==u-1){
-			cout<<"Source\t\t"<<dist[t];
-		}
-		else if(dist[t]==100){
-			cout<<"Unreachable\t"<<dist[t];
-		}
-		else{
-			cout<<parent[t]+1<<"\t\t"<<dist[t];
-		}
-	}
-	cout<<"\n";
 };
-void Dijkstra::build_min_heap(){
+void Prim::build_min_heap(){
 	for(int i=distance.size()/2;i>=0;--i)
 		min_heapify(i);
 };
-void Dijkstra::set(int v,int d){
+void Prim::set(int v,int d){
 	for(int i=0;i<distance.size();++i){
 		if(distance[i][0]==v){
 			distance[i][1]=d;
-			min_heapify(i);
 			break;
 		}
 	}
 };
-void Dijkstra::min_heapify(int i){
+bool Prim::exists(int v){
+	for(int i=0;i<distance.size();++i){
+		if(distance[i][0]==v){
+			return true;
+		}
+	}
+	return false;
+};
+void Prim::min_heapify(int i){
 	int l,r;
 	l=2*i+1;
 	r=2*i+2;
@@ -109,7 +105,7 @@ void Dijkstra::min_heapify(int i){
 		min_heapify(min);
 	}
 };
-int Dijkstra::remove_min(){
+int Prim::remove_min(){
 	if(distance.size()==0)
 		return -1;
 	else{

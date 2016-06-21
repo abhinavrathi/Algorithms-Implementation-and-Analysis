@@ -263,7 +263,8 @@ int main(int argc, const char * argv[]){
 						case 2:	DF.input();
 							DF.display();
 							break;
-						case 3:	
+						case 3:	PR.input();
+							PR.display();
 							break;
 						case 4:	DJ.input();
 							DJ.display();

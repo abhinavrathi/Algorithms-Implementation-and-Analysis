@@ -44,10 +44,10 @@ void Dijkstra::display(){
 	cin>>u;
 	distance[u-1][1]=0;
 	dist[u-1]=0;
-	build_min_heap();
 	parent[u-1]=0;
 	cout<<"\nDijkstra Shortest Paths from Node "<<u<<" ->";
 	while(distance.size()!=0){
+		build_min_heap();
 		t=remove_min();
 		for(v=0;v<list[t].size();++v){
 			if(dist[v]>dist[t]+list[t][v]){
@@ -64,7 +64,7 @@ void Dijkstra::display(){
 			cout<<"Source\t\t"<<dist[t];
 		}
 		else if(dist[t]==100){
-			cout<<"Unreachable\t"<<dist[t];
+			cout<<"Unreachable\t\u221E";
 		}
 		else{
 			cout<<parent[t]+1<<"\t\t"<<dist[t];
@@ -80,7 +80,6 @@ void Dijkstra::set(int v,int d){
 	for(int i=0;i<distance.size();++i){
 		if(distance[i][0]==v){
 			distance[i][1]=d;
-			min_heapify(i);
 			break;
 		}
 	}
