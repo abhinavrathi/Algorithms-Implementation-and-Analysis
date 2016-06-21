@@ -12,6 +12,8 @@
 #include "Tree/BinarySearchTree.hpp"
 #include "Problems/MaximumSubarray.hpp"
 #include "Problems/PriorityQueue.hpp"
+#include "Graphs/BFS.hpp"
+#include "Graphs/DFS.hpp"
 using namespace std;
 int main(int argc, const char * argv[]){
 	int ch,subch,subch1;
@@ -31,6 +33,8 @@ int main(int argc, const char * argv[]){
 	BinarySearchTree BST;
 	MaximumSubarray MSA;
 	PriorityQueue PQ;
+	BFS BF;
+	DFS DF;
 	do{
 		cout<<"\n=========\n";
 		cout<<"MAIN MENU";
@@ -236,7 +240,35 @@ int main(int argc, const char * argv[]){
 					}
 				}while(subch!=0);
 				break;
-			case 5:	
+			case 5:	do{
+					cout<<"\n==========\n";
+					cout<<"GRAPH MENU";
+					cout<<"\n==========\n";
+					cout<<"Press 1 for Breadth First Search.\n";
+					cout<<"Press 2 for Depth First Search.\n";
+					cout<<"Press 3 to find Minimum Spanning Tree (Prim).\n";
+					cout<<"Press 4 to find Minimum Spanning Tree (Kruskal).\n";
+					cout<<"Press 5 to find Shortest Distance (Dijkstra).\n";
+					cout<<"Press 0 to Exit.\n";
+					cout<<"Enter your choice : ";
+					cin>>subch;
+					switch(subch){
+						case 0:	break;
+						case 1:	BF.input();
+							BF.display();
+							break;
+						case 2:	DF.input();
+							DF.display();
+							break;
+						case 3:	
+							break;
+						case 4:	
+							break;
+						case 5:	
+							break;
+						default:cout<<"\nIllegal Choice!\n";
+					}
+				}while(subch!=0);
 				break;
 			case 6: do{
 					cout<<"\n=============\n";

@@ -1,6 +1,6 @@
 CC=g++
 CFLAGS=-c
-SOURCES=main.cpp $(wildcard OrderStatistics/*.cpp) $(wildcard Problems/*.cpp) $(wildcard Searching/*.cpp) $(wildcard Sorting/*.cpp) $(wildcard Tree/*.cpp)
+SOURCES=main.cpp $(wildcard Graphs/*.cpp) $(wildcard OrderStatistics/*.cpp) $(wildcard Problems/*.cpp) $(wildcard Searching/*.cpp) $(wildcard Sorting/*.cpp) $(wildcard Tree/*.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=run
 
