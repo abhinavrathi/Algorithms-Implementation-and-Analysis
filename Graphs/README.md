@@ -1,5 +1,5 @@
 #Graphs
-Here we work on a few algorithms and operations pertaining Tree reprentation of data. Some algorithms use Adjacency Lists while others use Matrices.
+Here we work on a few algorithms and operations pertaining Graph reprentation of data. Some algorithms use Adjacency Lists while others use Matrices.
 
 ##Breadth First Search
 
