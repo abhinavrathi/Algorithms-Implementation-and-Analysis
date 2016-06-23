@@ -283,13 +283,6 @@ int main(int argc, const char * argv[]){
 					cout<<"Press 1 for Maximum Subarray Problem.\n";
 					cout<<"Press 2 for Priority Queue Implimentation.\n";
 					cout<<"Press 3 for Longest Common Subsequence Problem.\n";
-					cout<<"Press 4 for .\n";
-					cout<<"Press 5 for .\n";
-					cout<<"Press 6 for .\n";
-					cout<<"Press 7 for .\n";
-					cout<<"Press 8 for .\n";
-					cout<<"Press 9 for .\n";
-					cout<<"Press 10 for .\n";
 					cout<<"Press 0 to Exit.\n";
 					cout<<"Enter your choice : ";
 					cin>>subch;
@@ -368,20 +361,6 @@ int main(int argc, const char * argv[]){
 							cout<<"Enter String 2 : ";
 							getline(cin,b);
 							cout<<"\nOUTPUT -> "<<LCS.find_lcs(a,b)<<"\n";
-							break;
-						case 4:	
-							break;
-						case 5:	
-							break;
-						case 6:	
-							break;
-						case 7:	
-							break;
-						case 8:	
-							break;
-						case 9:	
-							break;
-						case 10: 
 							break;
 						default:cout<<"\nIllegal Choice!\n";
 					}
