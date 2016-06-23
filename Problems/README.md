@@ -10,8 +10,8 @@ Time Complexity is &theta;(n)
 ##Priority Queue Implementation
 
 Here we implement a Maximum Priority Queue.<br>
-A traditional Queue processes data First-In-First-Out, while a Priority Queue has some priority attached with each data, and these data are popped out in order of theie priority.<br>
-Data Structure used for our implementation is a Max Heap. The functionalities provided for the Priority Queue are:<br>
+A traditional Queue processes data First-In-First-Out, while a Priority Queue has some priority attached with each data, and these data are popped out in order of their priority.<br>
+Data Structure used for our implementation is a Max Heap. The functionalities provided for the Priority Queue are:
 <ul>
 	<li>Show Highest Priority Item</li>
 	<li>Remove Highest Priority Item</li>
@@ -22,6 +22,6 @@ Time Complexity of the first operation is O(1), while the rest is O(log n). (whe
 
 ##Longest Common Subsequence
 
-Here we implement a Dynamic Programming approach.<br>
-We intend to find the longest common sequence of characters between two strings. To accomplish this, we create a matrix which is of the size len_str1+1 by len_str2+1. In this matrix, we will compare each character indexed by rows for str1 and columns for str2. If they are equal, we will add 1 to the longest string found till now, else we just continue with previous value.<br>
+Here we employ a Dynamic Programming approach.<br>
+We intend to find the longest common sequence of characters between two strings. To accomplish this, we create a matrix of size len_str1+1 by len_str2+1. In this matrix, we will compare each character indexed by rows for str1 and columns for str2. If they are equal, we will add 1 to the longest string found till now, else we just continue with previous value.<br>
 Time Complexity is &theta;(m+n). (where m and n are lengths of two string respectively)
