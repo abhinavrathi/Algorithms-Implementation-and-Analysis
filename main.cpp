@@ -12,6 +12,7 @@
 #include "Tree/BinarySearchTree.hpp"
 #include "Problems/MaximumSubarray.hpp"
 #include "Problems/PriorityQueue.hpp"
+#include "Problems/LongestCommonSubsequence.hpp"
 #include "Graphs/BFS.hpp"
 #include "Graphs/DFS.hpp"
 #include "Graphs/Prim.hpp"
@@ -21,6 +22,7 @@ int main(int argc, const char * argv[]){
 	int ch,subch,subch1;
 	int N,el,var,var1;
 	bool found;
+	string a,b;
 	vector<int> arr;
 	vector<int>::iterator it;
 	LinearSearch LS;
@@ -39,6 +41,7 @@ int main(int argc, const char * argv[]){
 	DFS DF;
 	Prim PR;
 	Dijkstra DJ;
+	LongestCommonSubsequence LCS;
 	do{
 		cout<<"\n=========\n";
 		cout<<"MAIN MENU";
@@ -279,7 +282,7 @@ int main(int argc, const char * argv[]){
 					cout<<"\n=============\n";
 					cout<<"Press 1 for Maximum Subarray Problem.\n";
 					cout<<"Press 2 for Priority Queue Implimentation.\n";
-					cout<<"Press 3 for .\n";
+					cout<<"Press 3 for Longest Common Subsequence Problem.\n";
 					cout<<"Press 4 for .\n";
 					cout<<"Press 5 for .\n";
 					cout<<"Press 6 for .\n";
@@ -359,7 +362,12 @@ int main(int argc, const char * argv[]){
 								}
 							}while(subch1!=0);
 							break;
-						case 3:	
+						case 3:	cin.ignore();
+							cout<<"\nEnter String 1 : ";
+							getline(cin,a);
+							cout<<"Enter String 2 : ";
+							getline(cin,b);
+							cout<<"\nOUTPUT -> "<<LCS.find_lcs(a,b)<<"\n";
 							break;
 						case 4:	
 							break;
