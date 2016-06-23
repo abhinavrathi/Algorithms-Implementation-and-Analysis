@@ -48,3 +48,5 @@ If the node has a right child, then it's successor is the minimum element in the
 Time Complexity to find Successor is &theta;(log n)
 
 Note: Assumption is that the tree is Balanced, else the time complexity can be as worse as in the case of a simple linked list.
+
+Also, we may augument nodes in this Tree with additional information to accomplish various tasks.
